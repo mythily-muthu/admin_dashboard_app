@@ -7,10 +7,12 @@ import { tokens } from "../../theme";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
+import { Typography } from "@mui/material";
 
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [pageSize, setPageSize] = React.useState(10);
 
   let columns = [
     { field: "id", headerName: "ID" },
@@ -60,9 +62,9 @@ const Team = () => {
             {access === "manager" && <SecurityOutlinedIcon />}
             {access === "user" && <LockOpenOutlinedIcon />}
 
-<Typography color={colors.grey[100]} sx={{ml:"5px"}}
-</Typography>
-
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+              {access}
+            </Typography>
           </Box>
         );
       },
@@ -73,8 +75,41 @@ const Team = () => {
     <Box m="20px">
       <Header title="TEAM" subtitle="Managing the team Members" />
 
-      <Box m="">
-        <DataGrid rows={mockDataTeam} columns={columns} />
+      <Box
+        m="35px 0 0 0"
+        height="75vh"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none !important",
+          },
+
+          "& .name-column--cell": {
+            color: colors.greenAccent[300],
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            backgroundColor: colors.blueAccent[700],
+            borderTop: "none",
+          },
+        }}
+      >
+        <DataGrid
+          rows={mockDataTeam}
+          columns={columns}
+          pageSize={pageSize}
+          onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+          rowsPerPageOptions={[5, 10, 15, 20, 30, 50, 100]}
+        />
       </Box>
     </Box>
   );
