@@ -3,17 +3,18 @@ import { Box } from "@mui/system";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Header from "../../components/Header";
 import { mockDataContacts } from "../../data/mockData";
+import React from "react";
 import { tokens } from "../../theme";
 
 const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  //const [pageSize, setPageSize] = React.useState(10);
+  const [pageSize, setPageSize] = React.useState(10);
 
   let columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
 
-    { field: "registerId", headerName: "Register ID" },
+    { field: "registrarId", headerName: "Register ID" },
 
     {
       field: "name",
@@ -97,9 +98,9 @@ const Contacts = () => {
           rows={mockDataContacts}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
-          //pageSize={pageSize}
-          //onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-          //rowsPerPageOptions={[5, 10, 15, 20, 30, 50, 100]}
+          pageSize={pageSize}
+          onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+          rowsPerPageOptions={[5, 10, 15]}
         />
       </Box>
     </Box>

@@ -181,7 +181,7 @@ export const mockDataContacts = [
         address: "0912 Won Street, Alabama, SY 10001",
         city: "New York",
         zipCode: "10001",
-        registrarId: 123512,
+        registrarId: "123512",
     },
     {
         id: 2,
