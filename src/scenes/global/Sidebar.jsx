@@ -104,9 +104,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={
-                    "https://cdn.pixabay.com/photo/2021/06/20/15/06/man-6351232__340.jpg"
-                  }
+                  src={"https://avatars.githubusercontent.com/u/113460532?v=4"}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
