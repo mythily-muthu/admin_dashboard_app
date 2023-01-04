@@ -6,4 +6,4 @@
 ![image](https://user-images.githubusercontent.com/113460532/210592321-b3fca639-22a9-421d-934b-5cc685ea0d8e.png)
 
 # Preview video
- file:///home/gokul/Videos/Screencasts/admin_dashboard.webm
+[admin_dashboard.webm](https://user-images.githubusercontent.com/113460532/210593500-5eab956c-8d66-4151-a881-ac640a2bf7ea.webm)
